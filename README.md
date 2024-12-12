@@ -1,6 +1,6 @@
 <h1>AI Chat Application</h1>
 <p>
-Welcome to the AI Chat Application, a modern app built with <a href="https://react.dev/learn alt="react.dev">React</a> and <a href="https://vite.dev/config/ alt="vite.dev">Vite.</a>This project demonstrates the seamless integration of AI functionality within a sleek, responsive chat interface. Users can input questions and view AI-generated responses in real-time, offering a simple yet powerful way to engage with AI technology.
+Welcome to the AI Chat Application, a modern app built with <a href="https://react.dev/learn" alt="react.dev">React</a> and <a href="https://vite.dev/config/" alt="vite.dev">Vite.</a>This project demonstrates the seamless integration of AI functionality within a sleek, responsive chat interface. Users can input questions and view AI-generated responses in real-time, offering a simple yet powerful way to engage with AI technology.
 </p>
   
 <h4>🚀 Live Demo:</h4>
