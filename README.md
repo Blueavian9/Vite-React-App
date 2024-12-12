@@ -13,14 +13,22 @@ Designed with responsiveness in mind, the app offers an optimal experience acros
 </p>
 
 <h4>🔧 Built With</h4>
-<a>React:</a><p>A powerful library for building dynamic and interactive user interfaces.</p>
-<ha>Vite:</a><p>A fast and efficient frontend build tool.</p>
-<a>Tailwind CSS:</a></h5><p>A utility-first CSS framework for creating a clean and responsive design.</p>
-<a>ChatBot:</a></h4><p>The AI integration library powering the chat interactions.</p>
+
+<a href="https://react.dev/learn alt="react.dev">React:</a><p>A powerful library for building dynamic and interactive user interfaces.</p>
+
+<a href="https://vite.dev/config/ alt="vite.dev">Vite:</a><p>A fast and efficient frontend build tool.</p>
+
+<a href="https://tailwindcss.com/docs/guides/vite alt="tailwindcss">Tailwind CSS:</a></h5><p>A utility-first CSS framework for creating a clean and responsive design.</p>
+
+<a href="https://www.npmjs.com/package/deca-chat">Deca-Chat:</a></h4><p>The AI integration library powering the chat interactions.</p>
+
 <h4><a>🎥 Highlights:</a></h4>
+
 <h5>Dynamic Chat Component:</h5><p>Users can input questions into the chat box, and the application dynamically displays the conversation history in real-time.</p>
+
 <h5>State Management:</h5><p>Utilizes React's state to store and render the message history, ensuring a smooth and 
 intuitive experience.</p>
+
 <h4>Sleek UI:</h4> <p> Styled with Tailwind CSS, the app offers a clean and modern interface.</p>
 
 <h5>📬 Get in Touch</h5>
