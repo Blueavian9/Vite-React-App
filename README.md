@@ -13,14 +13,13 @@ Designed with responsiveness in mind, the app offers an optimal experience acros
 
 <h4>🔧 Built With</h4>
 
-<p><a href="https://react.dev/learn alt="react.dev"> React:</a> A powerful library for building dynamic and interactive user interfaces.</p>
+<p><a href="https://react.dev/learn alt="react.dev"> React: </a> A powerful library for building dynamic and interactive user interfaces.</p>
 
-<a href="https://vite.dev/config/ alt="vite.dev">Vite:</a>
-<p>A fast and efficient frontend build tool.</p>
+<p><a href="https://vite.dev/config/ alt="vite.dev"> Vite: </a> A fast and efficient frontend build tool.</p>
 
-<a href="https://tailwindcss.com/docs/guides/vite alt="tailwindcss">Tailwind CSS:</a></h5><p>A utility-first CSS framework for creating a clean and responsive design.</p>
+<p><a href="https://tailwindcss.com/docs/guides/vite alt="tailwindcss">Tailwind CSS: </a> A utility-first CSS framework for creating a clean and responsive design.</p>
 
-<a href="https://www.npmjs.com/package/deca-chat">Deca-Chat:</a></h4><p>The AI integration library powering the chat interactions.</p>
+<p><a href="https://www.npmjs.com/package/deca-chat">Deca-Chat: </a> The AI integration library powering the chat interactions.</p>
 
 <h4><a>🎥 Highlights:</a></h4>
 
