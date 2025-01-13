@@ -44,7 +44,7 @@ Using HTTPS:
   
 bash
 Copy code
-git clone https://github.com/your-username/ai-chat-app.git  
+git clone: `https://github.com/your-username/ai-chat-app.git`  
 cd ai-chat-app  
 npm install  
 npm run dev  
