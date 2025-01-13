@@ -33,25 +33,24 @@ intuitive experience.</p>
 <h5>📬 Get in Touch</h5>
 <p>Have questions or feedback? Feel free to reach out! Whether you're interested in the app's implementation or have suggestions for improvement, your input is always welcome.</p>
 
-📜 License
+<h5>📜 License </h5>
 This project is open-source under the MIT License.
 
-🛠️ Local Setup
+<h5>🛠️ Local Setup </h5>
 You can set up this project locally by following these steps:
 
-Using HTTPS:
-<p>
-  
+<h5>Using HTTPS: </h5>
+<p>  
 bash
 Copy code
-git clone: `https://github.com/your-username/ai-chat-app.git`  
+git clone: https://github.com/your-username/ai-chat-app.git  
 cd ai-chat-app  
 npm install  
 npm run dev  
 Using SSH:
 </p>
 
-<h1>Bash</h1>
+<h5>Bash</h5>
   
 <p>
 Copy code
