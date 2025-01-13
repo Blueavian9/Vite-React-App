@@ -4,8 +4,7 @@ Welcome to the AI Chat Application, a modern app built with <a href="https://rea
 </p>
   
 <h4>🚀 Live Demo:</h4>
-<p>Check out the live version of the app hosted on Vercel, ensuring high performance and scalability.
-</p>
+<p>Check out the live version of the app hosted on Vercel, ensuring high performance and scalability.</p>
 
 <h4>📱 Mobile Optimized:</h4>
 <p>
@@ -14,9 +13,10 @@ Designed with responsiveness in mind, the app offers an optimal experience acros
 
 <h4>🔧 Built With</h4>
 
-<a href="https://react.dev/learn alt="react.dev">React:</a><p>A powerful library for building dynamic and interactive user interfaces.</p>
+<p><a href="https://react.dev/learn alt="react.dev"> React:</a> A powerful library for building dynamic and interactive user interfaces.</p>
 
-<a href="https://vite.dev/config/ alt="vite.dev">Vite:</a><p>A fast and efficient frontend build tool.</p>
+<a href="https://vite.dev/config/ alt="vite.dev">Vite:</a>
+<p>A fast and efficient frontend build tool.</p>
 
 <a href="https://tailwindcss.com/docs/guides/vite alt="tailwindcss">Tailwind CSS:</a></h5><p>A utility-first CSS framework for creating a clean and responsive design.</p>
 
