@@ -1,5 +1,4 @@
-import { DecaChat } from 'deca-chat';import { sendMessage } from './Deca-Chat';
-
+import { DecaChat } from 'deca-chat';
 
 // Define the configuration interface (optional)
 interface DecaChatConfig {
@@ -10,24 +9,54 @@ interface DecaChatConfig {
   temperature?: number; // Optional: Default 0.7
 }
 
-// Ensure the API key is loaded from the environment variables
+// Ensure the API key is securely loaded
+if (!import.meta.env.VITE_API_KEY) {
+  throw new Error('API key is missing. Set VITE_API_KEY in your environment variables.');
+}
+
+// Initialize the DecaChat instance
 const chat = new DecaChat({
-  apiKey: import.meta.env.VITE_API_KEY || '', // Replace with environment variable
-  model: 'gpt-4o-mini', // Optional: Specify the model
-  maxTokens: 1000, // Optional: Adjust token limit as needed
-  temperature: 0.7, // Optional: Set the temperature
+  apiKey: import.meta.env.VITE_API_KEY,
+  model: 'gpt-4o-mini',
+  maxTokens: 1000,
+  temperature: 0.7,
 });
+
+// Set a default system message
+chat.setSystemMessage('You are a helpful and friendly assistant ready to answer questions.');
 
 // Function to send a message and return a response
 export async function sendMessage(message: string): Promise<string> {
   try {
-    const response = await chat.chat('Hello, how are you?'); // Send message using DecaChat
+    const response = await chat.chat(message);
+    if (import.meta.env.MODE === 'development') {
+      console.log('AI Response:', response);
+    }
     return response;
-    console.log(response);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in DecaChat:', error);
+
+    if (error.response?.status === 401) {
+      return 'Invalid API key. Please check your configuration.';
+    }
+    if (error.response?.status === 429) {
+      return 'Rate limit exceeded. Please wait and try again.';
+    }
     return 'An error occurred. Please try again later.';
   }
+}
+
+// Function to clear the conversation history
+export function clearConversation(): void {
+  chat.clearConversation();
+  if (import.meta.env.MODE === 'development') {
+    console.log('Conversation history cleared.');
+  }
+}
+
+// Function to dynamically update the system message
+export function setSystemMessage(message: string): void {
+  chat.setSystemMessage(message);
 }
 
 // Export the chat instance for reuse (if needed)
