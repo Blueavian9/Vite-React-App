@@ -12,7 +12,7 @@ interface DecaChatConfig {
 
 // Initialize the chat client
 const chat = new DecaChat({
-  apiKey: 'your-openai-api-key', // Replace with your actual API key
+  apiKey: 'import.meta.env.VITE_API_KEY' //'your-openai-api-key', // Replace with your actual API key
 });
 
 // Send a message and get a response
