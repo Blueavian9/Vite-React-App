@@ -11,7 +11,6 @@ interface DecaChatConfig {
 
 // Ensure the API key is securely loaded
 if (!import.meta.env.VITE_API_KEY) {
-  console.log(import.meta.env);
   throw new Error('API key is missing. Set VITE_API_KEY in your environment variables.');
 }
 
@@ -50,10 +49,10 @@ export async function sendMessage(message: string): Promise<string> {
 // Function to clear the conversation history
 export function clearConversation(): void {
   chat.clearConversation();
-  if (import.meta.env.MODE === 'development') {
-    console.log('Conversation history cleared.');
-  }
 }
+  // if (import.meta.env.MODE === 'development') {
+  //   console.log('Conversation history cleared.'); run 
+  // }
 
 // Function to dynamically update the system message
 export function setSystemMessage(message: string): void {
