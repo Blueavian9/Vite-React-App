@@ -1,22 +1,45 @@
 import { DecaChat } from 'deca-chat';
+import bcrypt from 'bcrypt'; 
+import { fetchHashedKey } from './backendService'; // Simulated backend call
 
-// Define the configuration interface (optional)
-interface DecaChatConfig {
-  apiKey: string; // Your OpenAI API key (required)
-  model?: string; // Optional: Default 'gpt-4o-mini'
-  baseUrl?: string; // Optional: Default 'https://api.openai.com/v1'
-  maxTokens?: number; // Optional: Default 1000
-  temperature?: number; // Optional: Default 0.7
+// SQL Script (should be executed in the database, not here)
+/**
+CREATE TABLE api_keys (
+  id SERIAL PRIMARY KEY,
+  hashed_key TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO api_keys (hashed_key) VALUES ('<hashed_api_key>');
+*/
+
+// Function to securely fetch and validate the API key
+async function getApiKey(): Promise<string> {
+  const hashedKey = await fetchHashedKey(); // Fetch the hashed key from the backend
+  const providedKey = import.meta.env.VITE_API_KEY;
+
+  if (!providedKey || !(await verifyApiKey(providedKey, hashedKey))) {
+    throw new Error('Invalid or missing API key');
+  }
+
+  return providedKey;
 }
 
-// Ensure the API key is securely loaded
-if (!import.meta.env.VITE_API_KEY) {
-  throw new Error('API key is missing. Set VITE_API_KEY in your environment variables.');
+// Function to hash the API key 
+const saltRounds = 10;
+async function hashApiKey(apiKey: string): Promise<string> {
+  return await bcrypt.hash(apiKey, saltRounds);
 }
 
-// Initialize the DecaChat instance
+// Function to verify the API key
+async function verifyApiKey(apiKey: string, hashedKey: string): Promise<boolean> {
+  return await bcrypt.compare(apiKey, hashedKey);
+}
+
+// Initialize the DecaChat instance with the validated API key
+const apiKey = await getApiKey();
 const chat = new DecaChat({
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey,
   model: import.meta.env.VITE_MODEL || 'gpt-4o-mini',
   maxTokens: Number(import.meta.env.VITE_MAX_TOKENS) || 1000,
   temperature: Number(import.meta.env.VITE_TEMPERATURE) || 0.7,
@@ -49,15 +72,23 @@ export async function sendMessage(message: string): Promise<string> {
 // Function to clear the conversation history
 export function clearConversation(): void {
   chat.clearConversation();
+  if (import.meta.env.MODE === 'development') {
+    console.log('Conversation history cleared.');
+  }
 }
-  // if (import.meta.env.MODE === 'development') {
-  //   console.log('Conversation history cleared.'); run 
-  // }
 
 // Function to dynamically update the system message
 export function setSystemMessage(message: string): void {
   chat.setSystemMessage(message);
 }
 
-// Export the chat instance for reuse (if needed)
+// Export the chat instance and configuration interface for reuse (if needed)
+interface DecaChatConfig {
+  apiKey: string; // Your OpenAI API key (required)
+  model?: string; // Optional: Default 'gpt-4o-mini'
+  baseUrl?: string; // Optional: Default 'https://api.openai.com/v1'
+  maxTokens?: number; // Optional: Default 1000
+  temperature?: number; // Optional: Default 0.7
+}
+
 export { chat, DecaChatConfig };
