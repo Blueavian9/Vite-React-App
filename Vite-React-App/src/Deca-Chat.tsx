@@ -1,4 +1,5 @@
 import { DecaChat } from 'deca-chat';
+import { meta } from 'deca-chat';
 
 // Define the configuration interface (optional)
 interface DecaChatConfig {

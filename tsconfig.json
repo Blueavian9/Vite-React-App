@@ -1,21 +1,14 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-
-/// <reference types="vite/client" />
-
-interface ImportMetaEnv {
-    readonly VITE_API_KEY: string;
-    readonly MODE: string;
-    // Add more environment variables as needed
-  }
-  
-  interface ImportMeta {
-    readonly env: ImportMetaEnv;
-  }
-  {
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "strict": true,
+      "moduleResolution": "Node",
+      "jsx": "react-jsx",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true
+    },
     "include": ["src", "vite-env.d.ts"]
   }
-   export default defineConfig({
-    plugins: [react()],
-   });
+  
