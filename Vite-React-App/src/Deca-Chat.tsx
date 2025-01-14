@@ -1,5 +1,4 @@
 import { DecaChat } from 'deca-chat';
-import { meta } from 'deca-chat';
 
 // Define the configuration interface (optional)
 interface DecaChatConfig {
@@ -12,15 +11,16 @@ interface DecaChatConfig {
 
 // Ensure the API key is securely loaded
 if (!import.meta.env.VITE_API_KEY) {
+  console.log(import.meta.env);
   throw new Error('API key is missing. Set VITE_API_KEY in your environment variables.');
 }
 
 // Initialize the DecaChat instance
 const chat = new DecaChat({
   apiKey: import.meta.env.VITE_API_KEY,
-  model: 'gpt-4o-mini',
-  maxTokens: 1000,
-  temperature: 0.7,
+  model: import.meta.env.VITE_MODEL || 'gpt-4o-mini',
+  maxTokens: Number(import.meta.env.VITE_MAX_TOKENS) || 1000,
+  temperature: Number(import.meta.env.VITE_TEMPERATURE) || 0.7,
 });
 
 // Set a default system message
