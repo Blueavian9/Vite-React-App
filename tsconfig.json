@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types", "./src", "vite-end.d.ts", "tsconfig.json"]
+    "typeRoots": ["./node_modules/@types", "./src", "vite-end.d.ts"]
   },
   "include": ["src", "vite-env.d.ts"]
 }
