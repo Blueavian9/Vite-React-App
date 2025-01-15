@@ -1,5 +1,5 @@
 import * as React from "react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const apiKey = import.meta.env.VITE_API_KEY;
