@@ -1,7 +1,7 @@
 import { DecaChat } from 'deca-chat';
 import bcrypt from 'bcryptjs'; // or bcrypt if using Node.js
 import { fetchHashedKey } from './backendService'; // Adjust path as needed
-
+import fetch from 'node-fetch';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const model = import.meta.env.VITE_MODEL;
@@ -55,4 +55,25 @@ export function setSystemMessage(message: string): void {
 
 export function clearConversation(): void {
   chat.clearConversation();
+}
+
+async function initializeChat() {
+  if (!import.meta.env.VITE_API_KEY) {
+    throw new Error('API key is missing. Set VITE_API_KEY in your environment variables.');
+  }
+
+  const providedKey = import.meta.env.VITE_API_KEY;
+
+  // Fetch and verify the hashed key
+  const hashedKey = await fetchHashedKey();
+  if (!(await verifyApiKey(providedKey, hashedKey))) {
+    throw new Error('Invalid API key');
+  }
+
+  return new DecaChat({
+    apiKey: providedKey,
+    model: import.meta.env.VITE_MODEL || 'gpt-4o-mini',
+    maxTokens: Number(import.meta.env.VITE_MAX_TOKENS) || 1000,
+    temperature: Number(import.meta.env.VITE_TEMPERATURE) || 0.7,
+  });
 }
