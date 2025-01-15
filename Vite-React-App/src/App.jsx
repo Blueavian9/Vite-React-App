@@ -6,6 +6,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const model = import.meta.env.VITE_MODEL;
 const maxTokens = Number(import.meta.env.VITE_MAX_TOKENS);
 const temperature = Number(import.meta.env.VITE_TEMPERATURE);
+const mode = import.meta.env.MODE;
 
 console.log(import.meta.env.VITE_API_KEY);
 
