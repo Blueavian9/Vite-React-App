@@ -2,6 +2,12 @@ import { DecaChat } from 'deca-chat';
 import bcrypt from 'bcryptjs'; // or bcrypt if using Node.js
 import { fetchHashedKey } from './backendService'; // Adjust path as needed
 
+
+const apiKey = import.meta.env.VITE_API_KEY;
+const model = import.meta.env.VITE_MODEL;
+const maxTokens = Number(import.meta.env.VITE_MAX_TOKENS);
+const temperature = Number(import.meta.env.VITE_TEMPERATURE);
+
 // Function to hash the API key (optional for usage elsewhere)
 const saltRounds = 10;
 async function hashApiKey(apiKey: string): Promise<string> {
