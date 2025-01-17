@@ -1,4 +1,6 @@
+
 {
+  
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
@@ -8,11 +10,28 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types", "./src"]
+    "typeRoots": ["./node_modules/@types", "./src"], // Ensure the correct type roots
+    "baseUrl": "./",
+    "paths": {
+      "*": ["src/*"]
+    }
   },
-  "include": [
-    "src/**/*.ts", 
-    "src/**/*.tsx", 
-    "./vite-env.d.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/vite-env.d.ts"]
 }
+
+
+// original:  {
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "module": "ESNext",
+//     "strict": true,
+//     "moduleResolution": "Node",
+//     "jsx": "react-jsx",
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "resolveJsonModule": true,
+//     "typeRoots": ["./node_modules/@types", "./src"]
+//   },
+//     "include": ["src/**/*.ts", "src/**/*.tsx", "vite-env.d.ts"]
+//   }
+  
