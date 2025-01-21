@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
+import { CardList } from "./components/CardList";
+
 
 const apiKey = import.meta.env.VITE_API_KEY; // Access the environment variable directly
 const model = import.meta.env.VITE_MODEL;
@@ -73,8 +75,8 @@ const App = () => {
 
       {/* Data from API */}
       <h1>Data from API</h1>
-      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
-    </div>
+      <CardList posts = {data}/>
+   </div>
   );
 };
 
