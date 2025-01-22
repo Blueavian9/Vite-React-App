@@ -2,7 +2,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { CardList } from "./components/CardList";
-
+import 'node_modules/modern-normalize/modern-normalize.css';
+import './node_modules/sass-extras/index';
 
 const apiKey = import.meta.env.VITE_API_KEY; // Access the environment variable directly
 const model = import.meta.env.VITE_MODEL;
@@ -67,8 +68,8 @@ const App = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to My App</h1>
-          <p>Explore features and data-driven insights.</p>
+          <h1>Welcome to Storage App</h1>
+          <p>Explore features and back-up your data-storage.</p>
           <button className="cta-btn">Learn More</button>
         </div>
       </section>

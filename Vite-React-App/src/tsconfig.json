@@ -11,8 +11,8 @@
     "typeRoots": ["./node_modules/@types", "./src"], 
     "baseUrl": "./",
     "paths": {
-      "*": ["src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/vite-env.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/vite-env.d.ts", "src/**/*.tsconfig.json"]
 }

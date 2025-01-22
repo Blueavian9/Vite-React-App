@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -61,7 +64,8 @@
 }
 
 .nav-links a:hover {
-  color: #FFD700; /* Gold hover effect */
+  color: #FFD700;
+  /* Gold hover effect */
 }
 
 .logo a {
@@ -82,7 +86,8 @@
 }
 
 .hero {
-  background-image: url('https://via.placeholder.com/1500'); /* Replace with your own image URL */
+  background-image: url('https://via.placeholder.com/1500');
+  /* Replace with your own image URL */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -90,29 +95,38 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: black;
   padding: 0 20px;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #041305;
 }
 
 .hero-content p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  color: #041305;
 }
 
 .cta-btn {
-  background-color: #FFD700; /* Gold color */
+  background-color: #FFD700;
+  /* Gold color */
   padding: 1rem 2rem;
   font-size: 1.2rem;
   border: none;
+  border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .cta-btn:hover {
-  background-color: #f39c12;
+  background-color: #d18b23e0
 }
