@@ -2,8 +2,24 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { CardList } from "./components/CardList";
-import 'node_modules/modern-normalize/modern-normalize.css';
-import './node_modules/sass-extras/index';
+// import 'node_modules/modern-normalize/modern-normalize.css';
+// import './node_modules/sass-extras/index';
+import { createClient } from '@supabase/supabase-js'
+import { Auth } from '@supabase/auth-ui-react'
+
+import {
+  // Import predefined theme
+  ThemeSupa,
+} from '@supabase/auth-ui-shared'
+
+const App = () => (
+  <Auth
+    supabaseClient={supabase}
+    theme="default" // can also be "dark" or "evenDarker"
+    appearance={{ theme: ThemeSupa }}
+    providers={['google', 'facebook', 'twitter']}
+  />
+)
 
 const apiKey = import.meta.env.VITE_API_KEY; // Access the environment variable directly
 const model = import.meta.env.VITE_MODEL;
@@ -11,12 +27,12 @@ const maxTokens = Number(import.meta.env.VITE_MAX_TOKENS);
 const temperature = Number(import.meta.env.VITE_TEMPERATURE);
 const mode = import.meta.env.MODE;
 
-console.log("API Key from env:", apiKey); // Check if it's being logged properly
+const supabase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
 
-const App = () => {
-  const [data, setData] = useState(null);
+const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  console.log("API Key from env:", apiKey); // Check if it's being logged properly
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,15 +89,14 @@ const App = () => {
           <button className="cta-btn">Learn More</button>
         </div>
       </section>
+    
 
-      <div className="bg-primary text-primary-foreground">
-
-     
       {/* Data from API */}
       <h1>Data from API</h1>
+      <div className="bg-primary text-primary-foreground" />
       <CardList posts = {data}/>
-   </div>
+        </div>
   );
-};
+
 
 export default App;

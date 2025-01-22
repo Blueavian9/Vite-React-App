@@ -1,5 +1,8 @@
 import { Button } from '@supabase/ui'
 
-//...
-
-return ( <Button>I am a Supabase UI button</Button> )
+export default Button = () => {
+    return ( <div>
+                <Button>I am a Supabase UI button</Button>  
+                </div>
+            );
+        };
