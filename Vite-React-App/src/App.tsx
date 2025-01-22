@@ -74,6 +74,9 @@ const App = () => {
         </div>
       </section>
 
+      <div className="bg-primary text-primary-foreground">
+
+     
       {/* Data from API */}
       <h1>Data from API</h1>
       <CardList posts = {data}/>

@@ -1,8 +1,16 @@
-#root {
+
+:root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --warning: 38 92% 50%;
+  --warning-foreground: 48 96% 89%;
+}
+
+.dark {
+  --warning: 48 96% 89%;
+  --warning-foreground: 38 92% 50%;
 }
 
 .logo {
@@ -130,3 +138,4 @@
 .cta-btn:hover {
   background-color: #d18b23e0
 }
+
